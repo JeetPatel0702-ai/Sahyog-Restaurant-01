@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sahyog Restaurant | સહયોગ રેસ્ટોરન્ટ — Pure Vegetarian Dining in Borsad, Gujarat</title>
+  <meta name="description" content="Sahyog Restaurant — Borsad's favourite pure vegetarian restaurant. Serving Gujarati thali, paneer dishes, and home-style comfort food. Open until 11 PM. ★ 4.2 rated." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+Gujarati:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== CSS CUSTOM PROPERTIES ===== */
+    :root {
+      --color-primary: #C8552A;
+      --color-primary-dark: #A8431E;
+      --color-primary-glow: rgba(200, 85, 42, 0.35);
+      --color-accent: #2E5C3E;
+      --color-accent-light: #3A7A52;
+      --color-bg: #FAF6F0;
+      --color-bg-dark: #1C1008;
+      --color-bg-dark-lighter: #2A1C10;
+      --color-text: #2B1F14;
+      --color-muted: #8C7B6B;
+      --color-gold: #D4A853;
+      --color-gold-dim: rgba(212, 168, 83, 0.15);
+      --color-white: #FFFFFF;
+      --color-card: #FFFDF9;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+      --font-gujarati: 'Noto Sans Gujarati', sans-serif;
+      --nav-height: 80px;
+      --section-pad: clamp(60px, 10vw, 120px);
+      --container: min(1200px, 90vw);
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: inherit; }
+
+    /* ===== UTILITY ===== */
+    .container { width: var(--container); margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .section-label--green { color: var(--color-accent); }
+    .section-label--gold { color: var(--color-gold); }
+    .section-label--cream { color: rgba(250,246,240,0.6); }
+    .gold-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--color-gold);
+      margin: 20px auto;
+      border: none;
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== GRAIN OVERLAY ===== */
+    .grain-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ===== SVG LEAF DECORATIONS ===== */
+    .leaf-decoration {
+      position: absolute;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .leaf-decoration svg { width: 100%; height: 100%; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 32px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn--primary {
+      background: var(--color-primary);
+      color: var(--color-white);
+      box-shadow: 0 4px 20px rgba(200, 85, 42, 0.25);
+    }
+    .btn--primary:hover {
+      background: var(--color-primary-dark);
+      box-shadow: 0 6px 30px var(--color-primary-glow);
+      transform: translateY(-2px);
+    }
+    .btn--outline {
+      background: transparent;
+      border: 2px solid rgba(250, 246, 240, 0.5);
+      color: var(--color-bg);
+    }
+    .btn--outline:hover {
+      border-color: var(--color-bg);
+      background: rgba(250, 246, 240, 0.08);
+      transform: translateY(-2px);
+    }
+    .btn--outline-dark {
+      background: transparent;
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
+    }
+    .btn--outline-dark:hover {
+      background: var(--color-primary);
+      color: var(--color-white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px var(--color-primary-glow);
+    }
+
+    /* ============================================ */
+    /*  1. NAVIGATION BAR                          */
+    /* ============================================ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+    .navbar--scrolled {
+      background: var(--color-bg-dark);
+      box-shadow: 0 2px 30px rgba(0,0,0,0.3);
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .nav-logo__name {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--color-bg);
+      letter-spacing: 0.5px;
+    }
+    .nav-logo__gujarati {
+      font-family: var(--font-gujarati);
+      font-size: 0.7rem;
+      color: var(--color-gold);
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(250,246,240,0.8);
+      transition: color 0.3s;
+      letter-spacing: 0.3px;
+    }
+    .nav-links a:hover {
+      color: var(--color-gold);
+    }
+    .nav-links .btn {
+      padding: 11px 26px;
+      font-size: 0.85rem;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      padding: 6px;
+      z-index: 1001;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      background: var(--color-bg);
+      border-radius: 2px;
+      transition: all 0.35s ease;
+      transform-origin: center;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile Nav */
+    .mobile-nav {
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 16, 8, 0.97);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .mobile-nav.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mobile-nav a {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--color-bg);
+      transition: color 0.3s;
+    }
+    .mobile-nav a:hover { color: var(--color-gold); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ============================================ */
+    /*  2. HERO SECTION                            */
+    /* ============================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/hero-bg.png') center/cover no-repeat;
+      z-index: 0;
+    }
+    .hero__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(28, 16, 8, 0.72);
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      padding: calc(var(--nav-height) + 40px) 20px 60px;
+    }
+    .hero__eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s forwards;
+    }
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      font-weight: 700;
+      color: var(--color-bg);
+      line-height: 1.15;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.5s forwards;
+    }
+    .hero__title em {
+      color: var(--color-primary);
+      font-style: italic;
+    }
+    .hero__gujarati {
+      font-family: var(--font-gujarati);
+      font-size: 1rem;
+      color: rgba(250,246,240,0.5);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.7s forwards;
+    }
+    .hero__desc {
+      font-size: 1.05rem;
+      color: rgba(250,246,240,0.7);
+      max-width: 540px;
+      margin: 0 auto 36px;
+      line-height: 1.75;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.9s forwards;
+    }
+    .hero__ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.1s forwards;
+    }
+    .hero__badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      background: rgba(28, 16, 8, 0.5);
+      backdrop-filter: blur(10px);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: rgba(250,246,240,0.7);
+    }
+    .hero__badge span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero__badge .star { color: var(--color-gold); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================ */
+    /*  3. MARQUEE / TRUST BAR                     */
+    /* ============================================ */
+    .marquee-section {
+      background: var(--color-bg-dark);
+      overflow: hidden;
+      padding: 14px 0;
+      border-top: 1px solid rgba(212, 168, 83, 0.15);
+      border-bottom: 1px solid rgba(212, 168, 83, 0.15);
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+    .marquee-track span {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: var(--color-gold);
+      white-space: nowrap;
+      padding: 0 24px;
+      text-transform: uppercase;
+    }
+    .marquee-track span::after {
+      content: '·';
+      margin-left: 24px;
+      color: rgba(212, 168, 83, 0.3);
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ============================================ */
+    /*  4. ABOUT SECTION                           */
+    /* ============================================ */
+    .about {
+      padding: var(--section-pad) 0;
+      background: var(--color-bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about__image-wrap {
+      position: relative;
+    }
+    .about__image-frame {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(43, 31, 20, 0.15);
+    }
+    .about__image-frame::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border: 3px solid var(--color-primary);
+      border-radius: 16px;
+      z-index: -1;
+      opacity: 0.4;
+    }
+    .about__image-frame img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .about__badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--color-accent);
+      color: var(--color-white);
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 8px 30px rgba(46, 92, 62, 0.3);
+      z-index: 2;
+    }
+    .about__text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--color-text);
+    }
+    .about__text p {
+      color: var(--color-muted);
+      font-size: 1.02rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .about__stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .about__stat {
+      text-align: center;
+      padding: 16px 20px;
+      background: var(--color-gold-dim);
+      border-radius: 12px;
+      min-width: 110px;
+    }
+    .about__stat-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .about__stat-value {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .about__stat-label {
+      font-size: 0.78rem;
+      color: var(--color-muted);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .about .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .about__badge {
+        bottom: -10px;
+        right: 10px;
+      }
+    }
+
+    /* ============================================ */
+    /*  5. MENU HIGHLIGHTS SECTION                 */
+    /* ============================================ */
+    .menu {
+      padding: var(--section-pad) 0;
+      background: var(--color-bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .menu__header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .menu__header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--color-bg);
+      line-height: 1.2;
+    }
+    .menu__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .menu-card {
+      background: var(--color-card);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      cursor: default;
+      border-top: 3px solid transparent;
+    }
+    .menu-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+      border-top-color: var(--color-primary);
+    }
+    .menu-card__img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+    .menu-card__body {
+      padding: 22px 24px 26px;
+    }
+    .menu-card__name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 8px;
+    }
+    .menu-card__desc {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+    .menu__cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 1024px) {
+      .menu__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .menu__grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    }
+
+    /* ============================================ */
+    /*  6. WHY CHOOSE US SECTION                   */
+    /* ============================================ */
+    .why {
+      padding: var(--section-pad) 0;
+      background: var(--color-bg);
+      position: relative;
+    }
+    .why__header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .why__header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .why__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+    .why-card {
+      text-align: center;
+      padding: 36px 24px;
+      position: relative;
+      border-radius: 16px;
+      background: var(--color-card);
+      border: 1px solid rgba(212, 168, 83, 0.12);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .why-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(43, 31, 20, 0.1);
+    }
+    .why-card__icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 18px;
+      background: var(--color-gold-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      border: 2px solid rgba(212, 168, 83, 0.2);
+    }
+    .why-card__title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--color-text);
+    }
+    .why-card__desc {
+      font-size: 0.88rem;
+      color: var(--color-muted);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 1024px) {
+      .why__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .why__grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    }
+
+    /* ============================================ */
+    /*  7. REVIEWS SECTION                         */
+    /* ============================================ */
+    .reviews {
+      padding: var(--section-pad) 0;
+      background: var(--color-bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .reviews__header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .reviews__header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--color-bg);
+    }
+    .reviews__rating {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .reviews__stars {
+      font-size: 2rem;
+      color: var(--color-gold);
+      letter-spacing: 4px;
+    }
+    .reviews__score {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-bg);
+      margin-top: 6px;
+    }
+    .reviews__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .review-card {
+      background: var(--color-card);
+      padding: 32px 28px;
+      border-radius: 14px;
+      position: relative;
+      transition: transform 0.35s ease;
+    }
+    .review-card:hover { transform: translateY(-4px); }
+    .review-card__quote {
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: rgba(200, 85, 42, 0.1);
+      line-height: 1;
+    }
+    .review-card__stars {
+      color: var(--color-gold);
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .review-card__text {
+      font-size: 0.95rem;
+      color: var(--color-muted);
+      line-height: 1.7;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+    .review-card__author {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--color-text);
+    }
+    .reviews__cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .reviews__grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+    }
+
+    /* ============================================ */
+    /*  8. CONTACT / VISIT US SECTION              */
+    /* ============================================ */
+    .contact {
+      padding: var(--section-pad) 0;
+      background: var(--color-bg);
+      position: relative;
+    }
+    .contact .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .contact__info h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 28px;
+    }
+    .contact__detail {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 22px;
+      align-items: flex-start;
+    }
+    .contact__detail-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--color-gold-dim);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+    .contact__detail-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 2px;
+    }
+    .contact__detail-value {
+      font-size: 0.95rem;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+    .contact__cta { margin-top: 32px; }
+    .contact__map {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(43, 31, 20, 0.1);
+      border: 3px solid rgba(200, 85, 42, 0.2);
+    }
+    .contact__map iframe {
+      width: 100%;
+      height: 420px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .contact .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* ============================================ */
+    /*  9. FOOTER                                  */
+    /* ============================================ */
+    .footer {
+      background: var(--color-bg-dark);
+      border-top: 2px solid rgba(212, 168, 83, 0.2);
+      padding: 48px 0 0;
+    }
+    .footer .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+      padding-bottom: 40px;
+    }
+    .footer__brand h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-bg);
+      margin-bottom: 6px;
+    }
+    .footer__brand p {
+      font-size: 0.88rem;
+      color: rgba(250,246,240,0.5);
+      line-height: 1.6;
+      font-style: italic;
+    }
+    .footer__links h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 16px;
+    }
+    .footer__links a {
+      display: block;
+      font-size: 0.9rem;
+      color: rgba(250,246,240,0.6);
+      padding: 5px 0;
+      transition: color 0.3s;
+    }
+    .footer__links a:hover { color: var(--color-bg); }
+    .footer__contact-info p {
+      font-size: 0.9rem;
+      color: rgba(250,246,240,0.6);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer__bottom {
+      border-top: 1px solid rgba(212, 168, 83, 0.1);
+      padding: 18px 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(250,246,240,0.35);
+    }
+
+    @media (max-width: 768px) {
+      .footer .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+      }
+      .footer__contact-info p { justify-content: center; }
+    }
+
+    /* ===== SPICE/LEAF SVG DECORATIONS ===== */
+    .deco-leaf-1 {
+      width: 280px;
+      height: 280px;
+      top: 60px;
+      right: -60px;
+    }
+    .deco-leaf-2 {
+      width: 200px;
+      height: 200px;
+      bottom: 40px;
+      left: -40px;
+    }
+    .deco-leaf-3 {
+      width: 320px;
+      height: 320px;
+      top: -60px;
+      left: -80px;
+    }
+    .deco-leaf-4 {
+      width: 240px;
+      height: 240px;
+      bottom: -40px;
+      right: -50px;
+    }
+
+    /* ============================================ */
+    /*  FULL MENU MODAL                            */
+    /* ============================================ */
+    .menu-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .menu-modal.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .menu-modal__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(28, 16, 8, 0.85);
+      backdrop-filter: blur(8px);
+    }
+    .menu-modal__panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(900px, 100%);
+      height: 100%;
+      background: var(--color-bg);
+      overflow-y: auto;
+      transform: translateX(60px);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: -10px 0 60px rgba(0,0,0,0.3);
+    }
+    .menu-modal.open .menu-modal__panel {
+      transform: translateX(0);
+    }
+    .menu-modal__header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--color-bg-dark);
+      padding: 24px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid rgba(212, 168, 83, 0.2);
+    }
+    .menu-modal__header h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--color-bg);
+    }
+    .menu-modal__header h2 span {
+      color: var(--color-gold);
+      font-size: 0.85rem;
+      font-weight: 400;
+      display: block;
+      margin-top: 2px;
+      font-family: var(--font-body);
+      letter-spacing: 1px;
+    }
+    .menu-modal__close {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(250,246,240,0.1);
+      color: var(--color-bg);
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s, transform 0.3s;
+      flex-shrink: 0;
+    }
+    .menu-modal__close:hover {
+      background: var(--color-primary);
+      transform: rotate(90deg);
+    }
+
+    /* Category Tabs */
+    .menu-modal__tabs {
+      position: sticky;
+      top: 78px;
+      z-index: 9;
+      background: var(--color-bg);
+      padding: 16px 36px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      border-bottom: 1px solid rgba(43, 31, 20, 0.08);
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .menu-modal__tabs::-webkit-scrollbar { display: none; }
+    .menu-tab {
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+      background: rgba(43, 31, 20, 0.05);
+      color: var(--color-muted);
+      transition: all 0.3s ease;
+      border: 1.5px solid transparent;
+    }
+    .menu-tab:hover {
+      color: var(--color-primary);
+      background: rgba(200, 85, 42, 0.08);
+    }
+    .menu-tab.active {
+      background: var(--color-primary);
+      color: var(--color-white);
+      border-color: var(--color-primary);
+    }
+
+    /* Category Sections */
+    .menu-modal__body {
+      padding: 28px 36px 48px;
+    }
+    .menu-category {
+      margin-bottom: 40px;
+      display: none;
+    }
+    .menu-category.active {
+      display: block;
+      animation: menuFadeIn 0.35s ease;
+    }
+    @keyframes menuFadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .menu-category__title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu-category__title .cat-icon {
+      font-size: 1.3rem;
+    }
+    .menu-category__subtitle {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      margin-bottom: 20px;
+    }
+    .menu-category__divider {
+      width: 40px;
+      height: 2px;
+      background: var(--color-gold);
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    /* Menu Items */
+    .menu-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px dashed rgba(43, 31, 20, 0.08);
+      gap: 16px;
+    }
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+    .menu-item__info {
+      flex: 1;
+    }
+    .menu-item__name {
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .veg-badge {
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid var(--color-accent);
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .veg-badge::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--color-accent);
+      border-radius: 50%;
+    }
+    .menu-item__desc {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+    .menu-item__tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+    .menu-item__tag--popular {
+      background: rgba(212, 168, 83, 0.15);
+      color: #B8902A;
+    }
+    .menu-item__tag--chef {
+      background: rgba(46, 92, 62, 0.12);
+      color: var(--color-accent);
+    }
+    .menu-item__tag--new {
+      background: rgba(200, 85, 42, 0.12);
+      color: var(--color-primary);
+    }
+    .menu-item__price {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    .menu-modal__footer {
+      padding: 20px 36px;
+      background: var(--color-bg-dark);
+      text-align: center;
+      border-top: 1px solid rgba(212, 168, 83, 0.15);
+    }
+    .menu-modal__footer p {
+      font-size: 0.85rem;
+      color: rgba(250,246,240,0.5);
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .menu-modal__header { padding: 18px 20px; }
+      .menu-modal__tabs { padding: 12px 20px; top: 68px; }
+      .menu-modal__body { padding: 20px 20px 40px; }
+      .menu-modal__header h2 { font-size: 1.3rem; }
+      .menu-modal__footer { padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="#" class="nav-logo" aria-label="Sahyog Restaurant Home">
+        <span class="nav-logo__name">Sahyog</span>
+        <span class="nav-logo__gujarati">સહયોગ રેસ્ટોરન્ટ</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:02696224900" class="btn btn--primary">Order Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="#menu" class="mobile-nav-link">Menu</a>
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#reviews" class="mobile-nav-link">Reviews</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+    <a href="tel:02696224900" class="btn btn--primary" style="margin-top:10px;">Order Now</a>
+  </div>
+
+  <main>
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero grain-overlay" id="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">Borsad's Favourite Vegetarian Restaurant</p>
+        <h1 class="hero__title">
+          Where Every Table<br /><em>Feels Like Home</em>
+        </h1>
+        <p class="hero__gujarati">સહયોગ રેસ્ટોરન્ટ · બોરસદ</p>
+        <p class="hero__desc">
+          Pure vegetarian dining crafted with warmth — serving Borsad families since years with love, flavor, and the owner's personal touch.
+        </p>
+        <div class="hero__ctas">
+          <a href="tel:02696224900" class="btn btn--primary">📞 Reserve a Table</a>
+          <a href="#menu" class="btn btn--outline">View Our Menu</a>
+        </div>
+      </div>
+      <div class="hero__badge">
+        <span><span class="star">★</span> 4.2 Rating</span>
+        <span>862+ Happy Guests</span>
+        <span>🕙 Open Until 11 PM</span>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE / TRUST BAR ============ -->
+    <section class="marquee-section" aria-label="Trust badges">
+      <div class="marquee-track" aria-hidden="true">
+        <span>Pure Vegetarian</span>
+        <span>Dine-In</span>
+        <span>Takeaway</span>
+        <span>Home Delivery</span>
+        <span>Open Until 11 PM</span>
+        <span>★ 4.2 Rating</span>
+        <span>862+ Reviews</span>
+        <span>Borsad's Trusted Restaurant</span>
+        <span>Pure Vegetarian</span>
+        <span>Dine-In</span>
+        <span>Takeaway</span>
+        <span>Home Delivery</span>
+        <span>Open Until 11 PM</span>
+        <span>★ 4.2 Rating</span>
+        <span>862+ Reviews</span>
+        <span>Borsad's Trusted Restaurant</span>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section class="about" id="about">
+      <!-- Leaf decoration -->
+      <div class="leaf-decoration deco-leaf-1" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 10C60 40 20 90 30 150C40 180 70 190 100 190C130 190 160 180 170 150C180 90 140 40 100 10Z" fill="#2E5C3E"/>
+          <path d="M100 30L100 170" stroke="#1C1008" stroke-width="1.5"/>
+          <path d="M100 60C80 70 60 90 55 110" stroke="#1C1008" stroke-width="1"/>
+          <path d="M100 80C120 90 140 110 145 130" stroke="#1C1008" stroke-width="1"/>
+          <path d="M100 110C75 120 55 140 50 155" stroke="#1C1008" stroke-width="1"/>
+          <path d="M100 130C125 140 145 155 150 165" stroke="#1C1008" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="about__image-wrap reveal">
+          <div class="about__image-frame">
+            <img src="images/restaurant-interior.png" alt="Inside Sahyog Restaurant — warm, welcoming dining area in Borsad" loading="lazy" />
+          </div>
+          <div class="about__badge">✨ Owner-Present Hospitality</div>
+        </div>
+        <div class="about__text reveal">
+          <p class="section-label section-label--green">Our Story</p>
+          <h2>More Than a Meal —<br />A Borsad Tradition</h2>
+          <p>
+            At Sahyog, we believe dining is an act of togetherness. Nestled opposite the Mahi Canal in Borsad's Sona Shopping Centre, we've built our reputation on honest vegetarian cooking, attentive service, and an owner who personally ensures every guest leaves satisfied.
+          </p>
+          <div class="about__stats">
+            <div class="about__stat">
+              <div class="about__stat-icon">🏆</div>
+              <div class="about__stat-value">862+</div>
+              <div class="about__stat-label">Reviews</div>
+            </div>
+            <div class="about__stat">
+              <div class="about__stat-icon">⭐</div>
+              <div class="about__stat-value">4.2</div>
+              <div class="about__stat-label">Rating</div>
+            </div>
+            <div class="about__stat">
+              <div class="about__stat-icon">🕙</div>
+              <div class="about__stat-value">11 PM</div>
+              <div class="about__stat-label">Open Until</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MENU HIGHLIGHTS ============ -->
+    <section class="menu" id="menu">
+      <!-- Leaf decoration -->
+      <div class="leaf-decoration deco-leaf-2" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="100" cy="100" rx="90" ry="60" transform="rotate(-30 100 100)" fill="#2E5C3E"/>
+          <path d="M40 120C60 100 80 90 100 85C120 80 140 85 160 100" stroke="#1C1008" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="menu__header reveal">
+          <p class="section-label section-label--gold">Menu Highlights</p>
+          <h2>Pure Flavours, Crafted with Care</h2>
+          <hr class="gold-divider" />
+        </div>
+        <div class="menu__grid">
+          <div class="menu-card reveal">
+            <img class="menu-card__img" src="images/paneer-butter-masala.png" alt="Paneer Butter Masala — rich tomato-cream curry" loading="lazy" />
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">Paneer Butter Masala</h3>
+              <p class="menu-card__desc">Rich, velvety tomato-cream gravy with soft cottage cheese</p>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <img class="menu-card__img" src="images/paneer-tikka.png" alt="Paneer Tikka — smoky marinated paneer" loading="lazy" />
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">Paneer Tikka</h3>
+              <p class="menu-card__desc">Smoky marinated paneer with bell peppers, served sizzling</p>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <img class="menu-card__img" src="images/dal-tadka.png" alt="Dal Tadka — classic tempered lentils" loading="lazy" />
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">Dal Tadka</h3>
+              <p class="menu-card__desc">Classic tempered lentil comfort, the way home used to taste</p>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <img class="menu-card__img" src="images/jeera-rice.png" alt="Jeera Rice — fragrant basmati with cumin" loading="lazy" />
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">Jeera Rice</h3>
+              <p class="menu-card__desc">Fragrant basmati with cumin, perfectly paired with any curry</p>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <img class="menu-card__img" src="images/gujarati-thali.png" alt="Gujarati Thali — complete vegetarian meal" loading="lazy" />
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">Gujarati Thali</h3>
+              <p class="menu-card__desc">A complete meal: sabzi, dal, roti, rice, farsan & dessert</p>
+            </div>
+          </div>
+          <div class="menu-card reveal">
+            <img class="menu-card__img" src="images/special-sabzi.png" alt="Special Sabzi of the Day" loading="lazy" />
+            <div class="menu-card__body">
+              <h3 class="menu-card__name">Special Sabzi of the Day</h3>
+              <p class="menu-card__desc">Chef's seasonal vegetable preparation — always fresh</p>
+            </div>
+          </div>
+        </div>
+        <div class="menu__cta reveal">
+          <button onclick="openFullMenu()" class="btn btn--outline" style="border-color:var(--color-primary);color:var(--color-bg);">📋 View Full Menu</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FULL MENU MODAL ============ -->
+    <div class="menu-modal" id="menuModal" aria-hidden="true">
+      <div class="menu-modal__backdrop" onclick="closeFullMenu()"></div>
+      <div class="menu-modal__panel">
+        <div class="menu-modal__header">
+          <h2>Our Full Menu <span>🌿 100% Pure Vegetarian</span></h2>
+          <button class="menu-modal__close" onclick="closeFullMenu()" aria-label="Close menu">✕</button>
+        </div>
+        <div class="menu-modal__tabs" id="menuTabs">
+          <button class="menu-tab active" data-cat="starters">🍢 Starters</button>
+          <button class="menu-tab" data-cat="paneer">🧀 Paneer</button>
+          <button class="menu-tab" data-cat="dal-sabzi">🥘 Dal & Sabzi</button>
+          <button class="menu-tab" data-cat="breads">🫓 Breads</button>
+          <button class="menu-tab" data-cat="rice">🍚 Rice & Biryani</button>
+          <button class="menu-tab" data-cat="thali">🍽️ Thali</button>
+          <button class="menu-tab" data-cat="beverages">🥤 Beverages</button>
+          <button class="menu-tab" data-cat="desserts">🍮 Desserts</button>
+        </div>
+        <div class="menu-modal__body">
+
+          <!-- STARTERS -->
+          <div class="menu-category active" data-cat="starters">
+            <h3 class="menu-category__title"><span class="cat-icon">🍢</span> Starters</h3>
+            <p class="menu-category__subtitle">Begin your meal with our crispy, flavorful appetizers</p>
+            <hr class="menu-category__divider" />
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Paneer Tikka</div>
+                <p class="menu-item__desc">Smoky charcoal-grilled paneer marinated in spiced yogurt with bell peppers</p>
+                <span class="menu-item__tag menu-item__tag--popular">★ Bestseller</span>
+              </div>
+              <div class="menu-item__price">₹220</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Hara Bhara Kebab</div>
+                <p class="menu-item__desc">Spinach, peas & potato patties with mint chutney</p>
+              </div>
+              <div class="menu-item__price">₹160</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Crispy Corn</div>
+                <p class="menu-item__desc">Golden fried corn kernels tossed with spices and curry leaves</p>
+              </div>
+              <div class="menu-item__price">₹180</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Manchurian Dry</div>
+                <p class="menu-item__desc">Crispy vegetable balls in tangy Indo-Chinese sauce</p>
+                <span class="menu-item__tag menu-item__tag--popular">★ Bestseller</span>
+              </div>
+              <div class="menu-item__price">₹170</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Spring Rolls</div>
+                <p class="menu-item__desc">Crispy rolls stuffed with mixed vegetables and glass noodles</p>
+              </div>
+              <div class="menu-item__price">₹150</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Peri Peri Paneer</div>
+                <p class="menu-item__desc">Pan-seared paneer cubes tossed in fiery peri peri seasoning</p>
+                <span class="menu-item__tag menu-item__tag--new">New</span>
+              </div>
+              <div class="menu-item__price">₹230</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Cheese Balls</div>
+                <p class="menu-item__desc">Crispy breaded cheese with jalapeño and herbs</p>
+              </div>
+              <div class="menu-item__price">₹190</div>
+            </div>
+          </div>
+
+          <!-- PANEER -->
+          <div class="menu-category" data-cat="paneer">
+            <h3 class="menu-category__title"><span class="cat-icon">🧀</span> Paneer Specials</h3>
+            <p class="menu-category__subtitle">Our signature cottage cheese preparations — always fresh, always delicious</p>
+            <hr class="menu-category__divider" />
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Paneer Butter Masala</div>
+                <p class="menu-item__desc">Rich, velvety tomato-cream gravy with soft cottage cheese cubes</p>
+                <span class="menu-item__tag menu-item__tag--popular">★ Bestseller</span>
+              </div>
+              <div class="menu-item__price">₹240</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Kadai Paneer</div>
+                <p class="menu-item__desc">Paneer cooked with capsicum, onions & freshly ground kadai masala</p>
+              </div>
+              <div class="menu-item__price">₹230</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Shahi Paneer</div>
+                <p class="menu-item__desc">Royal creamy paneer with cashew-almond paste and aromatic spices</p>
+              </div>
+              <div class="menu-item__price">₹250</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Palak Paneer</div>
+                <p class="menu-item__desc">Cottage cheese in a smooth, mildly spiced spinach gravy</p>
+              </div>
+              <div class="menu-item__price">₹220</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Paneer Lababdar</div>
+                <p class="menu-item__desc">Paneer in a rich onion-tomato gravy with butter and cream</p>
+                <span class="menu-item__tag menu-item__tag--chef">Chef's Pick</span>
+              </div>
+              <div class="menu-item__price">₹260</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Paneer Do Pyaza</div>
+                <p class="menu-item__desc">Paneer with double onion — caramelized and fresh — in tangy gravy</p>
+              </div>
+              <div class="menu-item__price">₹230</div>
+            </div>
+          </div>
+
+          <!-- DAL & SABZI -->
+          <div class="menu-category" data-cat="dal-sabzi">
+            <h3 class="menu-category__title"><span class="cat-icon">🥘</span> Dal & Sabzi</h3>
+            <p class="menu-category__subtitle">Home-style lentils and vegetable curries that taste like nostalgia</p>
+            <hr class="menu-category__divider" />
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Dal Tadka</div>
+                <p class="menu-item__desc">Classic tempered yellow lentils with cumin, garlic & ghee</p>
+                <span class="menu-item__tag menu-item__tag--popular">★ Bestseller</span>
+              </div>
+              <div class="menu-item__price">₹150</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Dal Makhani</div>
+                <p class="menu-item__desc">Slow-cooked black lentils in creamy butter gravy — rich and indulgent</p>
+                <span class="menu-item__tag menu-item__tag--popular">★ Bestseller</span>
+              </div>
+              <div class="menu-item__price">₹180</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Dal Fry</div>
+                <p class="menu-item__desc">Everyday comfort dal with onion-tomato tempering</p>
+              </div>
+              <div class="menu-item__price">₹130</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Mix Veg</div>
+                <p class="menu-item__desc">Seasonal vegetables in mildly spiced gravy — a family favourite</p>
+              </div>
+              <div class="menu-item__price">₹160</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Aloo Gobi</div>
+                <p class="menu-item__desc">Potatoes and cauliflower dry-roasted with turmeric and cumin</p>
+              </div>
+              <div class="menu-item__price">₹140</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Bhindi Masala</div>
+                <p class="menu-item__desc">Crispy okra sautéed with onions, tomatoes, and spices</p>
+              </div>
+              <div class="menu-item__price">₹150</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Special Sabzi of the Day</div>
+                <p class="menu-item__desc">Chef's seasonal vegetable preparation — always fresh, always different</p>
+                <span class="menu-item__tag menu-item__tag--chef">Chef's Pick</span>
+              </div>
+              <div class="menu-item__price">₹160</div>
+            </div>
+          </div>
+
+          <!-- BREADS -->
+          <div class="menu-category" data-cat="breads">
+            <h3 class="menu-category__title"><span class="cat-icon">🫓</span> Breads</h3>
+            <p class="menu-category__subtitle">Freshly baked from our tandoor — hot, fluffy, and irresistible</p>
+            <hr class="menu-category__divider" />
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Tandoori Roti</div>
+                <p class="menu-item__desc">Whole wheat bread baked in clay tandoor</p>
+              </div>
+              <div class="menu-item__price">₹30</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Butter Naan</div>
+                <p class="menu-item__desc">Soft leavened bread brushed with melted butter</p>
+                <span class="menu-item__tag menu-item__tag--popular">★ Bestseller</span>
+              </div>
+              <div class="menu-item__price">₹50</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Garlic Naan</div>
+                <p class="menu-item__desc">Naan topped with roasted garlic and coriander</p>
+              </div>
+              <div class="menu-item__price">₹60</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Cheese Naan</div>
+                <p class="menu-item__desc">Stuffed with melted cheese — indulgent and stretchy</p>
+              </div>
+              <div class="menu-item__price">₹80</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Laccha Paratha</div>
+                <p class="menu-item__desc">Flaky, layered whole wheat paratha — crispy outside, soft inside</p>
+              </div>
+              <div class="menu-item__price">₹50</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Missi Roti</div>
+                <p class="menu-item__desc">Gram flour and wheat bread with spices — rustic and hearty</p>
+              </div>
+              <div class="menu-item__price">₹40</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Stuffed Kulcha</div>
+                <p class="menu-item__desc">Naan stuffed with spiced potato, paneer, or onion filling</p>
+              </div>
+              <div class="menu-item__price">₹70</div>
+            </div>
+          </div>
+
+          <!-- RICE -->
+          <div class="menu-category" data-cat="rice">
+            <h3 class="menu-category__title"><span class="cat-icon">🍚</span> Rice & Biryani</h3>
+            <p class="menu-category__subtitle">Fragrant basmati preparations, from simple jeera rice to loaded biryani</p>
+            <hr class="menu-category__divider" />
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Steamed Rice</div>
+                <p class="menu-item__desc">Plain fluffy basmati rice — the perfect partner for any curry</p>
+              </div>
+              <div class="menu-item__price">₹100</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Jeera Rice</div>
+                <p class="menu-item__desc">Fragrant basmati with cumin tempering and fresh coriander</p>
+                <span class="menu-item__tag menu-item__tag--popular">★ Bestseller</span>
+              </div>
+              <div class="menu-item__price">₹130</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Veg Biryani</div>
+                <p class="menu-item__desc">Dum-cooked basmati with mixed vegetables, saffron & aromatic spices</p>
+                <span class="menu-item__tag menu-item__tag--popular">★ Bestseller</span>
+              </div>
+              <div class="menu-item__price">₹200</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Paneer Biryani</div>
+                <p class="menu-item__desc">Layered biryani with marinated paneer and caramelized onions</p>
+                <span class="menu-item__tag menu-item__tag--chef">Chef's Pick</span>
+              </div>
+              <div class="menu-item__price">₹240</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Veg Pulao</div>
+                <p class="menu-item__desc">Lightly spiced rice cooked with fresh vegetables and whole spices</p>
+              </div>
+              <div class="menu-item__price">₹160</div>
+            </div>
+          </div>
+
+          <!-- THALI -->
+          <div class="menu-category" data-cat="thali">
+            <h3 class="menu-category__title"><span class="cat-icon">🍽️</span> Thali</h3>
+            <p class="menu-category__subtitle">Complete meals on a plate — the traditional Indian way to feast</p>
+            <hr class="menu-category__divider" />
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Gujarati Thali</div>
+                <p class="menu-item__desc">Full meal: 2 sabzi, dal, kadhi, rice, 4 roti, papad, pickle, farsan & dessert</p>
+                <span class="menu-item__tag menu-item__tag--popular">★ Bestseller</span>
+              </div>
+              <div class="menu-item__price">₹280</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Punjabi Thali</div>
+                <p class="menu-item__desc">Paneer curry, dal makhani, rice, 4 naan/roti, raita, salad & dessert</p>
+              </div>
+              <div class="menu-item__price">₹320</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Sahyog Special Thali</div>
+                <p class="menu-item__desc">Our premium thali: 3 curries, dal, rice, assorted breads, raita, papad, dessert & welcome drink</p>
+                <span class="menu-item__tag menu-item__tag--chef">Chef's Pick</span>
+              </div>
+              <div class="menu-item__price">₹380</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Mini Thali</div>
+                <p class="menu-item__desc">Light meal: 1 sabzi, dal, rice, 2 roti & papad — perfect for a quick lunch</p>
+              </div>
+              <div class="menu-item__price">₹180</div>
+            </div>
+          </div>
+
+          <!-- BEVERAGES -->
+          <div class="menu-category" data-cat="beverages">
+            <h3 class="menu-category__title"><span class="cat-icon">🥤</span> Beverages</h3>
+            <p class="menu-category__subtitle">Refresh, cool down, or warm up with our drink selection</p>
+            <hr class="menu-category__divider" />
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Masala Chaas</div>
+                <p class="menu-item__desc">Spiced buttermilk with roasted cumin and fresh mint</p>
+                <span class="menu-item__tag menu-item__tag--popular">★ Bestseller</span>
+              </div>
+              <div class="menu-item__price">₹50</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Sweet Lassi</div>
+                <p class="menu-item__desc">Thick creamy yogurt drink — sweetened and chilled</p>
+              </div>
+              <div class="menu-item__price">₹70</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Mango Lassi</div>
+                <p class="menu-item__desc">Seasonal Alphonso mango blended with yogurt and cardamom</p>
+                <span class="menu-item__tag menu-item__tag--new">Seasonal</span>
+              </div>
+              <div class="menu-item__price">₹90</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Fresh Lime Soda</div>
+                <p class="menu-item__desc">Sweet or salted — freshly squeezed lime with soda water</p>
+              </div>
+              <div class="menu-item__price">₹60</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Masala Chai</div>
+                <p class="menu-item__desc">Strong Indian tea brewed with ginger, cardamom & cloves</p>
+              </div>
+              <div class="menu-item__price">₹30</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Cold Coffee</div>
+                <p class="menu-item__desc">Blended iced coffee with milk and a scoop of ice cream</p>
+              </div>
+              <div class="menu-item__price">₹100</div>
+            </div>
+          </div>
+
+          <!-- DESSERTS -->
+          <div class="menu-category" data-cat="desserts">
+            <h3 class="menu-category__title"><span class="cat-icon">🍮</span> Desserts</h3>
+            <p class="menu-category__subtitle">Sweet endings to make your meal unforgettable</p>
+            <hr class="menu-category__divider" />
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Gulab Jamun (2 pcs)</div>
+                <p class="menu-item__desc">Soft milk-solid dumplings soaked in warm rose-cardamom syrup</p>
+                <span class="menu-item__tag menu-item__tag--popular">★ Bestseller</span>
+              </div>
+              <div class="menu-item__price">₹70</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Ras Malai (2 pcs)</div>
+                <p class="menu-item__desc">Spongy cheese patties in chilled saffron-cardamom milk</p>
+              </div>
+              <div class="menu-item__price">₹90</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Moong Dal Halwa</div>
+                <p class="menu-item__desc">Rich and aromatic lentil halwa garnished with nuts — a Gujarati classic</p>
+                <span class="menu-item__tag menu-item__tag--chef">Chef's Pick</span>
+              </div>
+              <div class="menu-item__price">₹100</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Ice Cream</div>
+                <p class="menu-item__desc">Choose from Vanilla, Mango, Butterscotch, or Kesar Pista</p>
+              </div>
+              <div class="menu-item__price">₹80</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__info">
+                <div class="menu-item__name"><span class="veg-badge"></span> Shrikhand</div>
+                <p class="menu-item__desc">Creamy strained yogurt dessert with saffron and cardamom</p>
+              </div>
+              <div class="menu-item__price">₹80</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="menu-modal__footer">
+          <p>Prices are inclusive of all taxes · Menu items subject to availability</p>
+          <a href="tel:02696224900" class="btn btn--primary" style="font-size:0.85rem;padding:12px 28px;">📞 Call to Order</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ WHY CHOOSE US ============ -->
+    <section class="why" id="why">
+      <div class="leaf-decoration deco-leaf-3" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 170C30 100 60 40 100 20C140 40 170 100 170 170C150 150 125 140 100 140C75 140 50 150 30 170Z" fill="#2E5C3E"/>
+          <path d="M100 40L100 140" stroke="#1C1008" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="why__header reveal">
+          <p class="section-label section-label--green">Why Us</p>
+          <h2>The Sahyog Difference</h2>
+          <hr class="gold-divider" />
+        </div>
+        <div class="why__grid">
+          <div class="why-card reveal">
+            <div class="why-card__icon">🌿</div>
+            <h3 class="why-card__title">100% Vegetarian</h3>
+            <p class="why-card__desc">Every dish crafted with pure vegetarian ingredients. No compromises.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-card__icon">👨‍🍳</div>
+            <h3 class="why-card__title">Owner-Supervised</h3>
+            <p class="why-card__desc">Our owner is present daily, personally ensuring quality and guest satisfaction.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-card__icon">🛵</div>
+            <h3 class="why-card__title">Dine-In, Takeaway & Delivery</h3>
+            <p class="why-card__desc">Enjoy Sahyog your way — at our table, yours, or on the go.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-card__icon">⏰</div>
+            <h3 class="why-card__title">Open Till 11 PM</h3>
+            <p class="why-card__desc">Late-night cravings? We're here when most places call it a night.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS SECTION ============ -->
+    <section class="reviews" id="reviews">
+      <div class="leaf-decoration deco-leaf-4" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="80" fill="#C8552A" opacity="0.3"/>
+          <circle cx="100" cy="100" r="50" fill="none" stroke="#C8552A" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="reviews__header reveal">
+          <p class="section-label section-label--gold">What Our Guests Say</p>
+          <h2>862 Reasons to Visit</h2>
+          <hr class="gold-divider" />
+        </div>
+        <div class="reviews__rating reveal">
+          <div class="reviews__stars">★★★★☆</div>
+          <div class="reviews__score">4.2 / 5</div>
+        </div>
+        <div class="reviews__grid">
+          <div class="review-card reveal">
+            <div class="review-card__quote">"</div>
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">"Food and staff are great. The owner himself looks after customers — that's something special."</p>
+            <p class="review-card__author">Burhan Chokshi</p>
+          </div>
+          <div class="review-card reveal">
+            <div class="review-card__quote">"</div>
+            <div class="review-card__stars">★★★★☆</div>
+            <p class="review-card__text">"Food was delicious. Service was awesome. A great dining experience overall."</p>
+            <p class="review-card__author">Ugale Roshan</p>
+          </div>
+          <div class="review-card reveal">
+            <div class="review-card__quote">"</div>
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">"Nice customer service and very tasty food. Highly recommended for families."</p>
+            <p class="review-card__author">Happy Guest</p>
+          </div>
+        </div>
+        <div class="reviews__cta reveal">
+          <a href="https://search.google.com/local/reviews?placeid=ChIJN1t_tDeuEmsRUsoyg83-ek0" target="_blank" rel="noopener" class="btn btn--outline">⭐ Leave a Review on Google</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT / VISIT US ============ -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact__info reveal">
+          <p class="section-label section-label--green">Visit Us</p>
+          <h2>Come Dine With Us</h2>
+          <div class="contact__detail">
+            <div class="contact__detail-icon">📍</div>
+            <div>
+              <p class="contact__detail-label">Address</p>
+              <p class="contact__detail-value">Sona Shopping Centre, Bhadran Road,<br/>Opposite Mahi Canal, Borsad, Gujarat 388540</p>
+            </div>
+          </div>
+          <div class="contact__detail">
+            <div class="contact__detail-icon">📞</div>
+            <div>
+              <p class="contact__detail-label">Phone</p>
+              <p class="contact__detail-value"><a href="tel:02696224900" style="color:var(--color-primary);font-weight:600;">02696 224 900</a></p>
+            </div>
+          </div>
+          <div class="contact__detail">
+            <div class="contact__detail-icon">🕙</div>
+            <div>
+              <p class="contact__detail-label">Hours</p>
+              <p class="contact__detail-value">Open Daily · Closes 11 PM</p>
+            </div>
+          </div>
+          <div class="contact__detail">
+            <div class="contact__detail-icon">🍽️</div>
+            <div>
+              <p class="contact__detail-label">Services</p>
+              <p class="contact__detail-value">Dine-In · Takeaway · No-Contact Delivery</p>
+            </div>
+          </div>
+          <div class="contact__cta">
+            <a href="tel:02696224900" class="btn btn--primary">📞 Call to Reserve</a>
+          </div>
+        </div>
+        <div class="contact__map reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.762!2d72.895!3d22.413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9e8e6e8e6e8f%3A0x0!2sSona+Shopping+Centre+Bhadran+Road+Borsad!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Sahyog Restaurant location on Google Maps"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">
+        <h3>Sahyog</h3>
+        <p>"Where Every Table Feels Like Home"</p>
+      </div>
+      <div class="footer__links">
+        <h4>Quick Links</h4>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer__contact-info">
+        <p>📞 <a href="tel:02696224900" style="color:rgba(250,246,240,0.8);">02696 224 900</a></p>
+        <p>🕙 Open Until 11 PM tonight</p>
+        <p style="margin-top:16px;">
+          <a href="tel:02696224900" class="btn btn--primary" style="padding:10px 22px;font-size:0.82rem;">📞 Call Now</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        © 2025 Sahyog Restaurant, Borsad, Gujarat · Pure Vegetarian 🌿
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ JAVASCRIPT ============ -->
+  <script>
+    // ===== Sticky Navbar =====
+    const navbar = document.getElementById('navbar');
+    const heroSection = document.getElementById('hero');
+
+    function handleNavScroll() {
+      if (window.scrollY > 80) {
+        navbar.classList.add('navbar--scrolled');
+      } else {
+        navbar.classList.remove('navbar--scrolled');
+      }
+    }
+    window.addEventListener('scroll', handleNavScroll, { passive: true });
+
+    // ===== Hamburger Menu =====
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileLinks = mobileNav.querySelectorAll('a');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileNav.setAttribute('aria-hidden', !isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ===== Scroll Reveal with Intersection Observer =====
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Stagger animation delay based on element position in viewport batch
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -60px 0px'
+    });
+
+    // Assign staggered delays to elements within the same section
+    document.querySelectorAll('section').forEach(section => {
+      const reveals = section.querySelectorAll('.reveal');
+      reveals.forEach((el, i) => {
+        el.dataset.delay = i * 120;
+      });
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ===== Smooth scroll for anchor links =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const navHeight = navbar.offsetHeight;
+          const targetPos = target.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ===== Full Menu Modal =====
+    const menuModal = document.getElementById('menuModal');
+    const menuTabs = document.querySelectorAll('.menu-tab');
+    const menuCategories = document.querySelectorAll('.menu-category');
+
+    function openFullMenu() {
+      menuModal.classList.add('open');
+      menuModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeFullMenu() {
+      menuModal.classList.remove('open');
+      menuModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    menuTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const cat = tab.dataset.cat;
+        menuTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        menuCategories.forEach(c => {
+          c.classList.toggle('active', c.dataset.cat === cat);
+        });
+      });
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuModal.classList.contains('open')) {
+        closeFullMenu();
+      }
+    });
+  </script>
+</body>
+</html>
